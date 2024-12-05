@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画像の色の簡略化</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>画像の色の簡略化</h1>
+  <div class="container">
+    <input type="file" id="imageInput" accept="image/*">
+    <label for="colorDepth">色の段階数: <span id="depthValue">4</span></label>
+    <input type="range" id="colorDepth" min="2" max="16" step="1" value="4">
+    <p>各チャンネルの値は 256 ÷ <span id="depthValue"></span> = <span id="stepValue">64</span> 刻みになります</p>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
